@@ -2,7 +2,8 @@ import face_recognition
 import cv2
 import numpy as np
 
-original_face_img = "images/man.png"
+# original_face_img = "images/man.png"
+original_face_img = "images/satou.jpg"
 
 
 def find_face_part(face_part_name):
@@ -25,12 +26,7 @@ face_img = cv2.imread(original_face_img)
 
 cv2.fillConvexPoly(
     face_img,
-    np.array(
-        find_face_part("left_eye")
-        + find_face_part("left_eyebrow")
-        + find_face_part("right_eyebrow")
-        + find_face_part("right_eye")
-    ),
+    np.array(find_face_part("chin")),
     color=(0, 120, 238),
 )
 
